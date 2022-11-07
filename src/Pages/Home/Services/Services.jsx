@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
@@ -9,12 +10,19 @@ const Services = () => {
       .then((data) => setServices(data));
   });
   return (
-    <div className="max-w-screen-xl mx-auto mb-20">
-      <h1 className="text-4xl text-center mb-12">Check my featured services</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="container mx-auto py-20">
+      <h1 className="text-2xl lg:text-4xl text-center mb-12">Check my featured services</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-4 mb-16">
         {services.map((service) => (
           <ServiceCard key={service?.id} service={service} />
         ))}
+      </div>
+      <div className="flex justify-center">
+        <Link to="/services">
+          <button className="btn btn-primary btn-skew">
+            <p className="skew-x-12">Browse more services</p>
+          </button>
+        </Link>
       </div>
     </div>
   );
