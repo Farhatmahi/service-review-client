@@ -38,8 +38,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">
-          <img src="https://i.ibb.co/XCZ3Y5J/signature.png" alt="" />
+        <Link className="">
+          <img className="w-36 lg:w-64" src="https://i.ibb.co/XCZ3Y5J/signature.png" alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -56,7 +56,7 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn btn-primary">Get started</Link>
+        <Link className="hidden lg:block btn btn-primary">Schedule a call</Link>
       </div>
     </div>
   );
