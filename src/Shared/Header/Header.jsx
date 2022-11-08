@@ -56,7 +56,9 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="hidden lg:block btn btn-primary">Schedule a call</Link>
+        <Link className="">
+          <button className="hidden lg:block btn btn-primary">Schedule a call</button>
+        </Link>
       </div>
     </div>
   );
