@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
-  const { _id, service_name, service_description, service_img, price } =
+  const { service_name, service_description, service_img, price } =
     useLoaderData();
 
   return (

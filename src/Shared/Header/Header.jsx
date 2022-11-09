@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleLogout = e => {
+    e.preventDefault()
+    logOut();
+  }
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -34,7 +42,7 @@ const Header = () => {
               <Link to='/services'>Services</Link>
             </li>
             <li>
-              <Link>Item 3</Link>
+              <Link to='/login'>Login</Link>
             </li>
           </ul>
         </div>
@@ -51,14 +59,16 @@ const Header = () => {
             <Link to='services'>Services</Link>
           </li>
           <li>
-            <Link to='/contact'>Contact</Link>
+            <Link to='/login'>Login/Register</Link>
           </li>
+
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="">
-          <button className="hidden lg:block btn btn-primary">Schedule a call</button>
-        </Link>
+        {user?.email && <Link className="flex items-center">
+          Welcome {user?.email}
+          <button onClick={handleLogout} className="hidden lg:block btn btn-primary ml-3">Logout</button>
+        </Link>}
       </div>
     </div>
   );
