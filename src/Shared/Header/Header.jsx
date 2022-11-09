@@ -2,14 +2,13 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
-
 const Header = () => {
-  const {user, logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
-  const handleLogout = e => {
-    e.preventDefault()
+  const handleLogout = (e) => {
+    e.preventDefault();
     logOut();
-  }
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -36,39 +35,79 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to='/'>Home</Link>
-            </li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="services">Services</Link>
+          </li>
+          <li>
+            <Link to="/login">Login/Register</Link>
+          </li>
+          {user?.email && (
             <li>
-              <Link to='/services'>Services</Link>
+              <Link to="#">My Reviews</Link>
             </li>
+          )}
+          {user?.email && (
             <li>
-              <Link to='/login'>Login</Link>
+              <Link to="#">Add Services</Link>
             </li>
+          )}
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
           </ul>
         </div>
         <Link className="">
-          <img className="w-36 lg:w-64" src="https://i.ibb.co/XCZ3Y5J/signature.png" alt="" />
+          <img
+            className="w-36 lg:w-64"
+            src="https://i.ibb.co/XCZ3Y5J/signature.png"
+            alt=""
+          />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to='services'>Services</Link>
+            <Link to="services">Services</Link>
           </li>
           <li>
-            <Link to='/login'>Login/Register</Link>
+            <Link to="/login">Login/Register</Link>
           </li>
-
+          {user?.email && (
+            <li>
+              <Link to="#">My Reviews</Link>
+            </li>
+          )}
+          {user?.email && (
+            <li>
+              <Link to="#">Add Services</Link>
+            </li>
+          )}
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        {user?.email && <Link className="flex items-center">
-          Welcome {user?.email}
-          <button onClick={handleLogout} className="hidden lg:block btn btn-primary ml-3">Logout</button>
-        </Link>}
+        {user?.email && (
+          <Link className="flex items-center">
+            <div className="avatar">
+              <div className="w-8 lg:w-12 rounded-full">
+                <img src={user?.photoURL} alt='' />
+              </div>
+            </div>
+            <button
+              onClick={handleLogout}
+              className=" lg:block btn btn-primary ml-3"
+            >
+              Logout
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -29,9 +29,9 @@ const Login = () => {
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left ml-16">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
+        <div className="text-center lg:text-left md:ml-16">
+          <h1 className="text-3xl lg:text-5xl font-bold">Login now!</h1>
+          <p className="text-sm lg:text-md py-6">
             Login here to get access to your reviews and custom services
           </p>
         </div>
