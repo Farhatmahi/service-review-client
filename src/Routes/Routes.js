@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
         path: "/services/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/services/${params.id}`),
+          fetch(`https://sarah-mcconor.vercel.app/services/${params.id}`),
       },
       {
         path: "/login",
@@ -40,7 +40,7 @@ const routes = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
-        loader: () => fetch("http://localhost:5001/blogs"),
+        loader: () => fetch("https://sarah-mcconor.vercel.app/blogs"),
       },
       {
         path: "/my-reviews",

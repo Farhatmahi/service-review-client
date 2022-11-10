@@ -2,9 +2,11 @@ import React from "react";
 import PageBannerAddService from "../../Shared/PageBanner/PageBannerAddService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
   const notify = () => toast("Service added successfully!");
+  useTitle("Add Service")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ const AddService = () => {
       price,
     };
 
-    fetch("http://localhost:5001/services", {
+    fetch("https://sarah-mcconor.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

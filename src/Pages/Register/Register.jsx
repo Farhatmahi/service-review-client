@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
 import PageBannerRegister from "../../Shared/PageBanner/PageBannerRegister";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
-
+  useTitle('Register')
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;

@@ -1,10 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 import PageBannerBlogs from "../../Shared/PageBanner/PageBannerBlogs";
 import BlogCard from "./BlogCard";
 
 const Blogs = () => {
   const blogs = useLoaderData();
+  useTitle('Blogs')
   return (
     <div className="">
       <PageBannerBlogs />

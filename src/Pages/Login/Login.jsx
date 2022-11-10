@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
 import PageBannerLogin from "../../Shared/PageBanner/PageBannerLogin";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.form?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
+  useTitle('Login')
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,11 +21,12 @@ const Login = () => {
       const user = result.user;
       console.log(user);
       navigate(from, { replace: true });
+
       const currentUser = {
         email: user.email,
       };
 
-      fetch("http://localhost:5001/jwt", {
+      fetch("https://sarah-mcconor.vercel.app/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -35,7 +38,6 @@ const Login = () => {
           console.log(data);
           localStorage.setItem("token", data.token);
         });
-      
     });
   };
 

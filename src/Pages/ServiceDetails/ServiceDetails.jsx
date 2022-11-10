@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import ReviewCard from "./ReviewCard";
-import { Watch } from  'react-loader-spinner'
+import { Watch } from "react-loader-spinner";
 
 const ServiceDetails = () => {
   const { user, loading } = useContext(AuthContext);
@@ -12,7 +12,7 @@ const ServiceDetails = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5001/reviews?service=${_id}`)
+    fetch(`https://sarah-mcconor.vercel.app/reviews?service=${_id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews, _id]);
@@ -32,7 +32,7 @@ const ServiceDetails = () => {
       reviewText,
     };
 
-    fetch("http://localhost:5001/reviews", {
+    fetch("https://sarah-mcconor.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -95,23 +95,24 @@ const ServiceDetails = () => {
       <h1 className="text-3xl text-center my-16">Reviews</h1>
       <div className="grid md:grid-cols-2 gap-6 mx-4">
         <div className="reviews">
-          {loading
-            ? <div className="flex justify-center">
+          {loading ? (
+            <div className="flex justify-center">
               <Watch
-  height="80"
-  width="80"
-  radius="48"
-  color="#000000"
-  ariaLabel="watch-loading"
-  wrapperStyle={{}}
-  wrapperClassName=""
-  visible={true}
-/>
+                height="80"
+                width="80"
+                radius="48"
+                color="#000000"
+                ariaLabel="watch-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
             </div>
-            
-            : reviews.map((review) => (
-                <ReviewCard key={review._id} review={review} />
-              ))}
+          ) : (
+            reviews?.map((review) => (
+              <ReviewCard key={review._id} review={review} />
+            ))
+          )}
         </div>
         <div className="">
           {user?.email ? (

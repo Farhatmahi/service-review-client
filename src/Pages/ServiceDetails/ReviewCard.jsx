@@ -2,16 +2,7 @@ import React from "react";
 
 const ReviewCard = ({ review }) => {
   const { email, reviewText, img, name } = review;
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    fetch("http://localhost:5001/reviews", {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
+  
   return (
     <div className="card card-compact w-full bg-base-100 shadow-xl mb-4">
       <div className="card-body flex flex-row items-center">

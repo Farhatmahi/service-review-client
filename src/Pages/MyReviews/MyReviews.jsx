@@ -4,13 +4,19 @@ import PageBannerReviews from "../../Shared/PageBanner/PageBannerReviews";
 import MyReviewsCard from "./MyReviewsCard";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../hooks/useTitle";
 
 const MyReviews = () => {
+  useTitle("My Reviews");
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const notify = () => toast("Review Deleted!");
   useEffect(() => {
-    fetch(`http://localhost:5001/reviews?email=${user?.email}`)
+    fetch(`https://sarah-mcconor.vercel.app/reviews?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -20,7 +26,7 @@ const MyReviews = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5001/reviews/${id}`, {
+    fetch(`https://sarah-mcconor.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -39,7 +45,7 @@ const MyReviews = () => {
           <h1 className="text-xl text-center py-6">No reviews were added</h1>
         ) : (
           <>
-            {reviews.map((review) => (
+            {reviews?.map((review) => (
               <MyReviewsCard
                 review={review}
                 handleDelete={handleDelete}

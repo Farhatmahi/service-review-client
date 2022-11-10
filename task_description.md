@@ -47,10 +47,16 @@ However, your website **cannot** be related to your **previous assignments** or 
 
 1. The **title of the page** will change with the page you visit. It should not be the same for every route
 2. Add a meaningful favicon
-3. Add a **spinner** on the services page, and the login and register page. If data is loading, a spinner will be displayed.
-4. use the **Environment** Environment variable on both the client (firebase config) and server-side (mongodb credentials, Access token secret). Use .gitignore file on the server side.
+3. Add a **spinner** on the services page, and the login and register page. If data is loading, a spinner will be displayed. **done**
+
+
+4. use the **Environment** Environment variable on both the client (firebase config) and server-side (mongodb credentials, Access token secret). Use .gitignore file on the server side. **done**
+
+
 5. Implement the basic version of the **JWT**  **token** for email/password-based authentication. Upon login, you will create a jwt token and store it on the client side, and for the "My reviews" page, you will send the token and verify the user. Implementing 401 and 403 is optional. 
+
 6. In the "My reviews" page, clicking the **edit review** button/icon shows that review in a modal/in a new route and lets the user update it.
+
 7.  **Simple challenge** In the service details page, **sort the reviews in a descending order** by inserting time(you have to keep the inserting time when you add a review, you can do it with the Date object, or you can explore MongoDB documentation). You will have to implement this code on the server side.
 
 ### Optional
