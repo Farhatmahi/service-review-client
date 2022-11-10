@@ -35,27 +35,26 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="services">Services</Link>
-          </li>
-          <li>
-            <Link to="/login">Login/Register</Link>
-          </li>
-          {user?.email && (
-            <li>
-              <Link to="#">My Reviews</Link>
+              <Link to="/">Home</Link>
             </li>
-          )}
-          {user?.email && (
             <li>
-              <Link to="#">Add Services</Link>
+              <Link to="services">Services</Link>
             </li>
-          )}
-          <li>
-            <Link to="/blogs">Blogs</Link>
-          </li>
+            <li>
+              <Link to="/login">Login/Register</Link>
+            </li>
+
+            <li>
+              <Link to="my-reviews">My Reviews</Link>
+            </li>
+
+            <li>
+              <Link to="/add-service">Add a Services</Link>
+            </li>
+
+            <li>
+              <Link to="/blogs">Blogs</Link>
+            </li>
           </ul>
         </div>
         <Link className="">
@@ -77,16 +76,14 @@ const Header = () => {
           <li>
             <Link to="/login">Login/Register</Link>
           </li>
-          {user?.email && (
-            <li>
-              <Link to="#">My Reviews</Link>
-            </li>
-          )}
-          {user?.email && (
-            <li>
-              <Link to="#">Add Services</Link>
-            </li>
-          )}
+
+          <li>
+            <Link to="/my-reviews">My Reviews</Link>
+          </li>
+
+          <li>
+            <Link to="/add-service">Add Services</Link>
+          </li>
           <li>
             <Link to="/blogs">Blogs</Link>
           </li>
@@ -97,7 +94,7 @@ const Header = () => {
           <Link className="flex items-center">
             <div className="avatar">
               <div className="w-8 lg:w-12 rounded-full">
-                <img src={user?.photoURL} alt='' />
+                <img src={user?.photoURL} alt="" />
               </div>
             </div>
             <button

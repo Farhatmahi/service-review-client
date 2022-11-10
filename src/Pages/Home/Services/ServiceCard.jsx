@@ -16,7 +16,7 @@ const ServiceCard = ({service}) => {
         <h2 className="card-title">{service_name}</h2>
         <p className="text-sm mb-3">{service_description.slice(1,100)}...</p>
         <div className="card-actions justify-between items-center">
-          <p>{price}</p>
+          <p>${price}</p>
           <Link to={`/services/${_id}`}><button className="btn btn-primary btn-skew"><p className="skew-x-12">View Details</p></button></Link>
         </div>
       </div>

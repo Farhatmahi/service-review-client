@@ -14,7 +14,7 @@ const ServiceDetails = () => {
     fetch(`http://localhost:5001/reviews?service=${_id}`)
     .then(res => res.json())
     .then(data => setReviews(data))
-  }, [_id])
+  }, [reviews, _id])
 
   const handleReview = (e) => {
     e.preventDefault();
@@ -84,13 +84,13 @@ const ServiceDetails = () => {
                 className="mask mask-star-2 bg-orange-400"
               />
             </div>
-            <p className="ml-3 text-xs">1 Reviews</p>
+            <p className="ml-3 text-xs">{reviews.length} Reviews</p>
           </div>
           <p>{service_description}</p>
         </div>
       </div>
       <h1 className="text-3xl text-center my-16">Reviews</h1>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 mx-4">
         <div className="reviews">
           {loading ? "Loading" : 
             reviews.map(review => <ReviewCard key={review._id} review={review} />)
@@ -99,7 +99,7 @@ const ServiceDetails = () => {
         <div className="">
           {user?.email ? (
             <>
-              <h1 className="text-xl mb-6">Write a review</h1>
+              <h1 className="text-lg md:text-xl mb-6">Write a review</h1>
               <form onSubmit={handleReview}>
                 <textarea
                   className="textarea textarea-bordered w-full"

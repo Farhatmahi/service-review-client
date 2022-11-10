@@ -17,16 +17,16 @@ const ReviewCard = ({ review }) => {
       <div className="card-body flex flex-row items-center">
         <div className="mr-4">
           <div className="avatar">
-            <div className="w-16 rounded-full">
+            <div className="w-12 md:w-16 rounded-full">
               <img src={img} alt="" />
             </div>
           </div>
         </div>
         <div className="flex-grow">
           <h2 className="card-title text-sm">
-            {name} <span className="text-xs font-light">({email})</span>
+            {name} <span className="hidden md:block text-xs font-light">({email})</span>
           </h2>
-          <p className="text-lg">"{reviewText}"</p>
+          <p className="text-md md:text-lg">"{reviewText}"</p>
         </div>
         <div className="">
           <button onClick={handleDelete} className="btn btn-circle btn-outline">
