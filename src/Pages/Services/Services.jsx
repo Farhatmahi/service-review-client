@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import PageBanner from '../../Shared/PageBanner/PageBanner';
+import PageBannerServices from '../../Shared/PageBanner/PageBanner';
+
 import ServiceCard from '../Home/Services/ServiceCard';
 
 const Services = () => {
@@ -12,7 +13,7 @@ const Services = () => {
   });
     return (
         <div>
-            <PageBanner/>
+            <PageBannerServices/>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-16 mx-4 lg:container lg:mx-auto">
       <PhotoProvider>
         {services.map((service) => (

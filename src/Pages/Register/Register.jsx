@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
+import PageBannerRegister from "../../Shared/PageBanner/PageBannerRegister";
 
 const Login = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
@@ -27,7 +28,9 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen">
+    <div className="">
+      <PageBannerRegister />
+      <div className="hero py-6">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left md:ml-16">
           <h1 className="text-3xl lg:text-5xl font-bold">New here?</h1>
@@ -96,6 +99,7 @@ const Login = () => {
           </label>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-const PageBannerServices = () => {
+const PageBannerRegister = () => {
   return (
     <div
       className="hero"
@@ -9,11 +9,11 @@ const PageBannerServices = () => {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="text-lg lg:text-5xl font-bold py-20">Services</h1>
+          <h1 className="text-lg lg:text-5xl font-bold py-20">Register</h1>
         </div>
       </div>
     </div>
   );
 };
 
-export default PageBannerServices;
+export default PageBannerRegister;

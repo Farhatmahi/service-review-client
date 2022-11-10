@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider";
+import PageBannerLogin from "../../Shared/PageBanner/PageBannerLogin";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
@@ -15,6 +16,24 @@ const Login = () => {
     login(email, password).then((result) => {
       const user = result.user;
       console.log(user);
+
+      const currentUser = {
+        email : user.email
+      }
+
+      fetch('http://localhost:5001/jwt', {
+        method : "POST",
+        headers : {
+          'content-type' : 'application/json'
+        },
+        body : JSON.stringify(currentUser)
+      }).then(res => res.json())
+      .then(data => {
+        console.log(data)
+        localStorage.setItem('token', data.token)
+      })
+
+
     });
   };
 
@@ -27,7 +46,9 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen">
+    <div className="">
+      <PageBannerLogin />
+      <div className="hero py-6">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left md:ml-16">
           <h1 className="text-3xl lg:text-5xl font-bold">Login now!</h1>
@@ -89,6 +110,7 @@ const Login = () => {
           </label>
         </div>
       </div>
+    </div>
     </div>
   );
 };
