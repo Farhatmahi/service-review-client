@@ -8,7 +8,7 @@ const Blogs = () => {
   return (
     <div className="">
       <PageBannerBlogs />
-      <div className="py-16 container mx-auto grid grid-cols-2 gap-6">
+      <div className="py-16 container lg:mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
       {blogs.map((blog) => (
         <BlogCard key={blogs._id} blog={blog} />
       ))}

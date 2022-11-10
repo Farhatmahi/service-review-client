@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10">
+    <footer className="footer p-10" id="footer">
       <div>
-        <img className="w-64" src="https://i.ibb.co/XCZ3Y5J/signature.png" alt="" />
+        <img
+          className="w-64"
+          src="https://i.ibb.co/XCZ3Y5J/signature.png"
+          alt=""
+        />
         <p>
-
-
           “In photography there is a reality so subtle that it becomes more real
           than reality.”
         </p>
