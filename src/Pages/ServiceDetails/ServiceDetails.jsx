@@ -113,6 +113,7 @@ const ServiceDetails = () => {
               <ReviewCard key={review._id} review={review} />
             ))
           )}
+          {reviews.length === 0 && <h1>No reviews here</h1>}
         </div>
         <div className="">
           {user?.email ? (

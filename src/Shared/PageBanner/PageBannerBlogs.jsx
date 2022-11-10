@@ -4,7 +4,7 @@ const PageBannerBlogs = () => {
   return (
     <div
       className="hero"
-      style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
+      style={{ backgroundImage: `url("https://placeimg.com/800/640/arch")` }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">

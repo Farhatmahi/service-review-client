@@ -13,21 +13,13 @@ const MyReviews = () => {
   const notify = () => toast("Review Deleted!");
 
   useEffect(() => {
-    fetch(`http://localhost:5001/reviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => {
-        if(res.status === 401 || res.status === 403){
-          logOut()
-        }
-        res.json()})
+    fetch(`http://localhost:5001/reviews?email=${user?.email}`)
+      .then(res =>res.json())
       .then((data) => {
         setReviews(data);
         console.log(data);
       });
-  }, [user?.email]);
+  }, [user?.email, logOut]);
 
   const handleDelete = (id) => {
     console.log(id);
