@@ -8,16 +8,21 @@ import useTitle from "../../hooks/useTitle";
 
 const MyReviews = () => {
   useTitle("My Reviews");
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const notify = () => toast("Review Deleted!");
+
   useEffect(() => {
-    fetch(`https://sarah-mcconor.vercel.app/reviews?email=${user?.email}`, {
+    fetch(`http://localhost:5001/reviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if(res.status === 401 || res.status === 403){
+          logOut()
+        }
+        res.json()})
       .then((data) => {
         setReviews(data);
         console.log(data);
@@ -26,7 +31,7 @@ const MyReviews = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`https://sarah-mcconor.vercel.app/reviews/${id}`, {
+    fetch(`http://localhost:5001/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

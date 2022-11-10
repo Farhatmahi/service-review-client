@@ -48,8 +48,6 @@ However, your website **cannot** be related to your **previous assignments** or 
 1. The **title of the page** will change with the page you visit. It should not be the same for every route
 2. Add a meaningful favicon
 3. Add a **spinner** on the services page, and the login and register page. If data is loading, a spinner will be displayed. **done**
-
-
 4. use the **Environment** Environment variable on both the client (firebase config) and server-side (mongodb credentials, Access token secret). Use .gitignore file on the server side. **done**
 
 

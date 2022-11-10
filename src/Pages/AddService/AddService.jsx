@@ -6,7 +6,7 @@ import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
   const notify = () => toast("Service added successfully!");
-  useTitle("Add Service")
+  useTitle("Add Service");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const AddService = () => {
       price,
     };
 
-    fetch("https://sarah-mcconor.vercel.app/services", {
+    fetch("http://localhost:5001/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

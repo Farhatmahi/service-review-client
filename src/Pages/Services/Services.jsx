@@ -12,7 +12,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
   useTitle("Services");
   useEffect(() => {
-    fetch("https://sarah-mcconor.vercel.app/all-services")
+    fetch("http://localhost:5001/all-services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   });
