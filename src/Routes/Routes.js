@@ -11,46 +11,55 @@ import Services from "../Pages/Services/Services";
 import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
-    {
-        path : '/',
-        element : <Main />,
-        children : [
-            {
-                path : '/',
-                element : <Home />
-            },
-            {
-                path : '/services',
-                element : <Services />
-            },
-            {
-                path : '/services/:id',
-                element : <ServiceDetails />,
-                loader : ({params}) => fetch(`http://localhost:5001/services/${params.id}`)
-            },
-            {
-                path : '/login',
-                element : <Login />
-            },
-            {
-                path : '/register',
-                element : <Register />
-            },
-            {
-                path : '/blogs',
-                element : <Blogs />,
-                loader : () => fetch('http://localhost:5001/blogs')
-            },
-            {
-                path : '/my-reviews',
-                element : <PrivateRoute><MyReviews /></PrivateRoute>,
-            },
-            {
-                path : '/add-service',
-                element : <PrivateRoute><AddService/></PrivateRoute>
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Main />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/services",
+        element: <Services />,
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/services/${params.id}`),
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
+        loader: () => fetch("http://localhost:5001/blogs"),
+      },
+      {
+        path: "/my-reviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add-service",
+        element: (
+          <PrivateRoute>
+            <AddService />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+]);
 
-export default routes
+export default routes;

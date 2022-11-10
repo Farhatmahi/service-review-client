@@ -7,8 +7,8 @@ import PageBannerLogin from "../../Shared/PageBanner/PageBannerLogin";
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation()
-  const from = location.state?.form?.pathname || '/'
+  const location = useLocation();
+  const from = location.state?.form?.pathname || "/";
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,7 +18,7 @@ const Login = () => {
     login(email, password).then((result) => {
       const user = result.user;
       console.log(user);
-
+      navigate(from, { replace: true });
       const currentUser = {
         email: user.email,
       };
@@ -35,7 +35,7 @@ const Login = () => {
           console.log(data);
           localStorage.setItem("token", data.token);
         });
-        navigate(from, {replace : true})
+      
     });
   };
 

@@ -8,13 +8,13 @@ const ServiceDetails = () => {
   const { _id, service_name, service_description, service_img, price } =
     useLoaderData();
 
-  const [reviews, setReviews] = useState([])
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5001/reviews?service=${_id}`)
-    .then(res => res.json())
-    .then(data => setReviews(data))
-  }, [reviews, _id])
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, [reviews, _id]);
 
   const handleReview = (e) => {
     e.preventDefault();
@@ -24,6 +24,7 @@ const ServiceDetails = () => {
 
     const review = {
       service: _id,
+      service_name: service_name,
       name: user?.displayName || "Unknown User",
       email,
       img: user?.photoURL,
@@ -38,10 +39,11 @@ const ServiceDetails = () => {
       body: JSON.stringify(review),
     })
       .then((res) => res.json())
-      .then((data) => {console.log(data)
-      if(data.acknowledged){
-        form.reset()
-      }
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          form.reset();
+        }
       });
   };
 
@@ -92,9 +94,11 @@ const ServiceDetails = () => {
       <h1 className="text-3xl text-center my-16">Reviews</h1>
       <div className="grid md:grid-cols-2 gap-6 mx-4">
         <div className="reviews">
-          {loading ? "Loading" : 
-            reviews.map(review => <ReviewCard key={review._id} review={review} />)
-          }
+          {loading
+            ? "Loading"
+            : reviews.map((review) => (
+                <ReviewCard key={review._id} review={review} />
+              ))}
         </div>
         <div className="">
           {user?.email ? (

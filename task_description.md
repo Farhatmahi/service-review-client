@@ -17,6 +17,7 @@ However, your website **cannot** be related to your **previous assignments** or 
 2. There will be a " see all" button/icon under the 3 services. When clicking the button/icon, take the user to the /services route and show all the services on that page. **done**
 3. Add two extra sections on the home page. Make sure it is unique and relevant to your website. **done**
 4. The services of the home page and the services of the services page will have the name of the service, image, rating(optional), price, a short description(maximum 100 characters), and a view details button with each service card. **done**
+
 5. When clicking on the image of the service, the picture will be viewed on full screen. Explore the package [react-photo-view](https://react-photo-view.vercel.app/en-US) for that.  **pending**
 
 6. On clicking the view details button, the user will be taken to the service details page: _/services/:id_ route **done**
@@ -25,19 +26,21 @@ However, your website **cannot** be related to your **previous assignments** or 
 
 	7.1. **Service section:-** show all the details of that Service with full description. **done**
 	
-	7.2. **Review section:-** there will be a review section where a user can see others' reviews of that service. A review should contain a text, name, and image of the reviewer, rating(optional). The user can also **add his/her own review** for that service. But he needs to log in first. If the user is not logged in(use conditional rendering), show a text like: Please login to add a review. After clicking the login button/link, take him to the login page. Otherwise, show a form with a text area and a button to add his review(rating is optional). Please store the user info (email, etc.) and service info (service id, etc.) with each review to display the reviews correctly with the relevant service. 
+	7.2. **Review section:-** there will be a review section where a user can see others' reviews of that service. A review should contain a text, name, and image of the reviewer, rating(optional). The user can also **add his/her own review** for that service. But he needs to log in first. If the user is not logged in(use conditional rendering), show a text like: Please login to add a review. After clicking the login button/link, take him to the login page. Otherwise, show a form with a text area and a button to add his review(rating is optional). Please store the user info (email, etc.) and service info (service id, etc.) with each review to display the reviews correctly with the relevant service. **done**
 
 8. Implement email/password-based authentication and at least one social login(google, Facebook, GitHub, etc.) authentication. Please skip the email verification part here, because it will create some inconvenience for the examiner. It is important for the examiner to be able to check your authentication without any hassle. If you want, you can add email verification after getting the assignment result. **done**
 
 
 9. Once a user is logged in, he/she will see more options like My reviews, Add service, and the logout button in the navbar. **done** **photo thik kora baki**
 
-10. The "My reviews" page will be a private route and show only the reviews that the current user added either in a table or in cards with relevant information like - service name, review etc. There will be two buttons/icons - edit review(details in the bonus part) and **delete review** with each review. On clicking the delete button/icon, you have to delete the review, and it won't show up on that service page anymore. When the delete is successful, a toast/modal with a message will pop up to inform the user. If the user doesn't add any review, the page will show 'No reviews were added' at the middle of the page
+10. The "My reviews" page will be a private route and show only the reviews that the current user added either in a table or in cards with relevant information like - service name, review etc. There will be two buttons/icons - edit review(details in the bonus part) and **delete review** with each review. On clicking the delete button/icon, you have to delete the review, and it won't show up on that service page anymore. When the delete is successful, a toast/modal with a message will pop up to inform the user. If the user doesn't add any review, the page will show 'No reviews were added' at the middle of the page 
 
-11. On the "Add service" page(also a private route), you can **add a service** and that service will be shown on the home page. When the service is added successfully, a toast/modal with a message will pop up to inform the user. 
+11. On the "Add service" page(also a private route), you can add a service and that service will be shown on the home page. When the service is added successfully, a toast/modal with a message will pop up to inform the user. **done**
 
 12. No Fake data (data must be hosted on the database). The database could be MongoDB or any other NoSQL database. **done**
-13. Add one more public route: Blogs. You will have to answer the following questions on the Blog page **done**
+
+13. Add one more public route: Blogs. You will have to answer the following questions on the Blog page 
+**done**
 
 	- Difference between SQL and NoSQL
 	- What is JWT, and how does it work?
@@ -49,6 +52,9 @@ However, your website **cannot** be related to your **previous assignments** or 
 1. Your Readme file for the client-side repo should have details about your project's features and functionalities in bullet points(at least five bullet points) and your live link. Adding a meaningful readme file for the server-side repo is optional.
 2. At least 15 meaningful GitHub commits for the client-side and 8 meaningful commits for the server-side repository.
 3. Your code should be clean and organized. Comments should be added where necessary
+
+
+
 
 1. The **title of the page** will change with the page you visit. It should not be the same for every route
 2. Add a meaningful favicon

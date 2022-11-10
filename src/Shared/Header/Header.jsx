@@ -40,9 +40,11 @@ const Header = () => {
             <li>
               <Link to="services">Services</Link>
             </li>
-            <li>
-              <Link to="/login">Login/Register</Link>
-            </li>
+            {!user && (
+              <li>
+                <Link to="/login">Login/Register</Link>
+              </li>
+            )}
 
             <li>
               <Link to="my-reviews">My Reviews</Link>
@@ -73,10 +75,11 @@ const Header = () => {
           <li>
             <Link to="services">Services</Link>
           </li>
-          <li>
-            <Link to="/login">Login/Register</Link>
-          </li>
-
+          {!user && (
+              <li>
+                <Link to="/login">Login/Register</Link>
+              </li>
+            )}
           <li>
             <Link to="/my-reviews">My Reviews</Link>
           </li>
