@@ -17,13 +17,7 @@ However, your website **cannot** be related to your **previous assignments** or 
 2. There will be a " see all" button/icon under the 3 services. When clicking the button/icon, take the user to the /services route and show all the services on that page. **done**
 3. Add two extra sections on the home page. Make sure it is unique and relevant to your website. **done**
 4. The services of the home page and the services of the services page will have the name of the service, image, rating(optional), price, a short description(maximum 100 characters), and a view details button with each service card. **done**
-
-
-
-5. When clicking on the image of the service, the picture will be viewed on full screen. Explore the package [react-photo-view](https://react-photo-view.vercel.app/en-US) for that.  **pending**
-
-
-
+5. When clicking on the image of the service, the picture will be viewed on full screen. Explore the package [react-photo-view](https://react-photo-view.vercel.app/en-US) for that.  **done**
 6. On clicking the view details button, the user will be taken to the service details page: _/services/:id_ route **done**
 7. The service details route will have two sections.
 	7.1. **Service section:-** show all the details of that Service with full description. **done*	
@@ -43,7 +37,8 @@ However, your website **cannot** be related to your **previous assignments** or 
 
 ### Bonus Requirements
 
-1. Your Readme file for the client-side repo should have details about your project's features and functionalities in bullet points(at least five bullet points) and your live link. Adding a meaningful readme file for the server-side repo is optional.
+1. Your Readme file for the client-side repo should have details about your project's features and functionalities in bullet points(at least five bullet points) and your live link. Adding a meaningful readme file for the server-side repo is optional. **done**
+
 2. At least 15 meaningful GitHub commits for the client-side and 8 meaningful commits for the server-side repository.
 3. Your code should be clean and organized. Comments should be added where necessary
 

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import ReviewCard from "./ReviewCard";
+import { Watch } from  'react-loader-spinner'
 
 const ServiceDetails = () => {
   const { user, loading } = useContext(AuthContext);
@@ -56,7 +57,7 @@ const ServiceDetails = () => {
         <div className="md:w-1/2 md:ml-10 px-4">
           <h1 className="text-3xl">{service_name} Photography</h1>
           <hr className="w-1/4 my-3 border-1 border-black" />
-          <p>Price : {price}</p>
+          <p>Price : ${price}</p>
           <div className="flex items-center my-4">
             <div className="rating rating-xs">
               <input
@@ -95,7 +96,19 @@ const ServiceDetails = () => {
       <div className="grid md:grid-cols-2 gap-6 mx-4">
         <div className="reviews">
           {loading
-            ? "Loading"
+            ? <div className="flex justify-center">
+              <Watch
+  height="80"
+  width="80"
+  radius="48"
+  color="#000000"
+  ariaLabel="watch-loading"
+  wrapperStyle={{}}
+  wrapperClassName=""
+  visible={true}
+/>
+            </div>
+            
             : reviews.map((review) => (
                 <ReviewCard key={review._id} review={review} />
               ))}
