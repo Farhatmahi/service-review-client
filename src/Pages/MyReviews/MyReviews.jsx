@@ -13,8 +13,8 @@ const MyReviews = () => {
   const notify = () => toast("Review Deleted!");
 
   useEffect(() => {
-    fetch(`http://localhost:5001/reviews?email=${user?.email}`)
-      .then(res =>res.json())
+    fetch(`https://sarah-mcconor.vercel.app/reviews?email=${user?.email}`)
+      .then((res) => res.json())
       .then((data) => {
         setReviews(data);
         console.log(data);
@@ -23,7 +23,7 @@ const MyReviews = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5001/reviews/${id}`, {
+    fetch(`https://sarah-mcconor.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -33,6 +33,17 @@ const MyReviews = () => {
       });
     notify();
   };
+
+  // const handleUpdate = (id) => {
+  //   fetch(`https://sarah-mcconor.vercel.app/reviews/${id}`,
+  //   {
+  //     method : "PATCH",
+  //     headers : {
+  //       'content-type' : 'application/json'
+  //     },
+  //     body : JSON.stringify('')
+  //   })
+  // }
 
   return (
     <div className="">

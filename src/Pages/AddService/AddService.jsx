@@ -23,7 +23,7 @@ const AddService = () => {
       price,
     };
 
-    fetch("http://localhost:5001/services", {
+    fetch("https://sarah-mcconor.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

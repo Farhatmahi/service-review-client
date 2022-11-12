@@ -26,7 +26,7 @@ const Login = () => {
         email: user.email,
       };
 
-      fetch("http://localhost:5001/jwt", {
+      fetch("https://sarah-mcconor.vercel.app/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -35,7 +35,7 @@ const Login = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.token)
+          console.log(data.token);
           localStorage.setItem("token", data.token);
         });
     });
@@ -45,11 +45,11 @@ const Login = () => {
     e.preventDefault();
     signInWithGoogle().then((result) => {
       const user = result.user;
-      
+
       const currentUser = {
-        email : user.email
-      }
-      fetch("http://localhost:5001/jwt", {
+        email: user.email,
+      };
+      fetch("https://sarah-mcconor.vercel.app/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -58,7 +58,7 @@ const Login = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.token)
+          console.log(data.token);
           localStorage.setItem("token", data.token);
         });
     });

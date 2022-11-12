@@ -8,3 +8,4 @@ Functionalities :
 5. All of the user's review will be on the 'my reviews' page
 
 live : https://sarah-mcconor-74711.web.app/services
+vercel : https://sarah-mcconor.vercel.app/
